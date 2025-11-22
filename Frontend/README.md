@@ -35,7 +35,7 @@ This project is **publicly accessible** but communicates exclusively with intern
 ## Architecture
 
 - **Direct REST communication**: Each frontend view or component directly calls the appropriate backend service endpoints (Authentication, User, Device) via REST APIs.
-- **No messaging queue in the backend**: Since the backend microservices do not use a message broker, the frontend ensures data consistency by performing multiple API requests when needed.
+- **Messaging queues in the backend**: Since the backend microservices are synchronized using RabbitMQ queues, the frontend has no role in ensuring the data microservices access is consistent.
 - **Data consistency strategy**:
   - For user-related views, the frontend may request user profile data from the User service and authentication info from the Auth service in separate calls.
   - For device management, the frontend may fetch device details and associated user information in separate API requests to guarantee the UI reflects the most recent state.
