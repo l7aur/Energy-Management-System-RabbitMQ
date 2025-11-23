@@ -76,4 +76,5 @@ bool CommandLineParser::validateDate(const unsigned int day, const unsigned int 
 	}
 
 	if (year > 2025) return false;
+	return true;
 }
