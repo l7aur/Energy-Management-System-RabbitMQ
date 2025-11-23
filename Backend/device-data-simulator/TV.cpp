@@ -15,18 +15,15 @@ std::list<Message> TV::getMessages(unsigned int day, unsigned int month, unsigne
                 }
             );
 
-    // Morning Usage (06:00:00 - 07:20:00): Consumption = ~0.080 kWh (News)
+    // Morning Usage (06:00:00 - 06:50:00): Consumption = ~0.080 kWh (News)
     messages.emplace_back(Message{ .timestamp = {.year = year, .month = month, .day = day, .hour = 6, .minute = 0, .second = 0}, .deviceId = uid, .measuredValue = 0.080f });
     messages.emplace_back(Message{ .timestamp = {.year = year, .month = month, .day = day, .hour = 6, .minute = 10, .second = 0}, .deviceId = uid, .measuredValue = 0.082f });
     messages.emplace_back(Message{ .timestamp = {.year = year, .month = month, .day = day, .hour = 6, .minute = 20, .second = 0}, .deviceId = uid, .measuredValue = 0.081f });
     messages.emplace_back(Message{ .timestamp = {.year = year, .month = month, .day = day, .hour = 6, .minute = 30, .second = 0}, .deviceId = uid, .measuredValue = 0.083f });
     messages.emplace_back(Message{ .timestamp = {.year = year, .month = month, .day = day, .hour = 6, .minute = 40, .second = 0}, .deviceId = uid, .measuredValue = 0.080f });
     messages.emplace_back(Message{ .timestamp = {.year = year, .month = month, .day = day, .hour = 6, .minute = 50, .second = 0}, .deviceId = uid, .measuredValue = 0.082f });
-    messages.emplace_back(Message{ .timestamp = {.year = year, .month = month, .day = day, .hour = 7, .minute = 0, .second = 0}, .deviceId = uid, .measuredValue = 0.081f });
-    messages.emplace_back(Message{ .timestamp = {.year = year, .month = month, .day = day, .hour = 7, .minute = 10, .second = 0}, .deviceId = uid, .measuredValue = 0.083f });
-    messages.emplace_back(Message{ .timestamp = {.year = year, .month = month, .day = day, .hour = 7, .minute = 20, .second = 0}, .deviceId = uid, .measuredValue = 0.080f });
 
-    // Off-Peak (07:30:00 - 16:30:00): Consumption = 0.000 kWh (No one home)
+    // Off-Peak (07:00:00 - 16:50:00): Consumption = 0.000 kWh (No one home)
     for (unsigned int hour = 7; hour <= 16; hour++)
         for (unsigned int minute = 0; minute <= 50; minute += 10)
             messages.emplace_back(
