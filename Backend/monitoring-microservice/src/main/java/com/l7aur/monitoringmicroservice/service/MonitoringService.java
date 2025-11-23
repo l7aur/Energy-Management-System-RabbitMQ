@@ -43,6 +43,12 @@ public class MonitoringService {
             }
 
             if (cache.get(data.getDeviceId()).size() >= NUMBER_OF_READINGS_PER_HOUR) {
+                sd = cache.get(data.getDeviceId()).getFirst();
+                Double cumulativeReadings = cache.get(data.getDeviceId())
+                        .stream()
+                        .mapToDouble(SensorData::getMeasuredValue)
+                        .sum();
+                sd.setMeasuredValue(cumulativeReadings);
                 sensorDataRepository.save(sd);
                 cache.remove(data.getDeviceId());
             }
