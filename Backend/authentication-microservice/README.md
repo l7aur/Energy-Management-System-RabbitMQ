@@ -41,7 +41,7 @@ This service is **accessible only through the API Gateway** and is included in t
 - Role/authority mapping stored in DB
 - No session state (stateless microservice)
 - Gateway provides request authentication boundary
-- Springdoc endpoints are prefixed with: `auth/public`
+- Springdoc endpoints are prefixed with: `/auth/public`
 - `/auth/secured/login` and `/auth/secured/register` are public (unsecured) endpoints
 - Endpoints are prefixed with: `/auth/secured`
 
