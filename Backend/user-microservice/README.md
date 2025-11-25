@@ -37,7 +37,7 @@ It runs as part of the **Docker Compose microservices environment**.
 - JWT-based authentication
 - No session state (stateless microservice)
 - Gateway provides request authentication boundary
-- Springdoc endpoints are prefixed with: `user/public`
+- Springdoc endpoints are prefixed with: `/user/public`
 - Endpoints are prefixed with: `/user/secured`
 
 ## Architecture
