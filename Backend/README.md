@@ -48,7 +48,9 @@ The Energy Management System backend is designed for stateless, REST-based, sync
 2. **Service isolation** - each microservice has its own database and manages its own entities:  
    - Auth: Users & Roles  
    - User: Profile data  
-   - Device: Devices & duplicated user data  
+   - Device: Devices & duplicated user data
+   - Monitoring: Readings coming from a sensor
+
 3. **API Gateway (Traefik)**:  
    - Handles JWT validation - dynamic jwt middleware: `github.com/agilezebra/jwt-middleware`
    - Routes requests to appropriate services  
